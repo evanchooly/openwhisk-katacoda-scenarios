@@ -18,7 +18,7 @@ Move to the project directory
 
 Click the link below to open pom.xml and update the **finalName** with value **${artifactId}** that makes us avoid long jar names during Function deployment on OpenWhisk:
 
-``/root/projects/hello-openwhisk/pom.xml``{{open}}
+``pom.xml``{{open}}
 
 Lets open the Java source file **/root/projects/hello-openwhisk/src/main/java/com/example/FunctionApp.java**  to review its contents, click the link below to pent the source file on editor:
 

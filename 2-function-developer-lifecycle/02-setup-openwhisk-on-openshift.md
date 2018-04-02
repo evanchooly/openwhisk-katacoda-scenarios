@@ -66,4 +66,4 @@ Successful execution of the above command should display output like below:
 
 You have now deployed [Apache OpenWhisk](https://openwhisk.apache.org/) to the [OpenShift Container Platform](https://openshift.com]). 
 
-In next step of this scenario, we will write a simple JavaScript function, deploy it to OpenWhisk and invoke the same to verify that we are in good shape to continue our FaaS journey.
+In next step of this scenario, we will write a simple Java function, deploy it to OpenWhisk and invoke the same to verify that we are in good shape to continue our FaaS journey.
