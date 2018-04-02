@@ -4,7 +4,7 @@ Having successfully developed and deployed a Java Function on to [Apache OpenWhi
 
 **1. Update Java function**
 
-Lets open the Java source file **/root/projects/hello-openwhisk/src/main/java/com/example/FunctionApp.java**
+Let's open the Java source file `src/main/java/com/example/FunctionApp.java`
 
 ``/root/projects/hello-openwhisk/src/main/java/com/example/FunctionApp.java``{{open}}
 
@@ -29,7 +29,7 @@ public class FunctionApp {
 
 **2. Update Java function Test Class**
 
-Since we have updated the Java Source we also need to update the test class as well, let's open the Java Test source file **/root/projects/hello-openwhisk/src/test/java/com/example/FunctionAppTest.java**
+Since we have updated the Java Source we also need to update the test class as well, let's open the Java Test source file `src/test/java/com/example/FunctionAppTest.java`
 
 ``/root/projects/hello-openwhisk/src/test/java/com/example/FunctionAppTest.java``{{open}}
 
@@ -67,7 +67,7 @@ Finally rebuild the project
 
 **2. Deploy the function**
 
-Lets now update the function called **hello-openwhisk**:
+Let's now update the `hello-openwhisk` function:
 
 ``wsk -i action update hello-openwhisk target/hello-openwhisk.jar --main com.example.FunctionApp``{{execute}}
 
@@ -79,53 +79,15 @@ A successful update of the function will show output like:
 
 **3. Verify the update**
 
-Having created the function **hello-openwhisk**, lets now verify the update.
-
-**Unblocked invocation**
-
-All OpenWhisk action invocations are `unblocked` by default.  Each action invocation will return an **activation id** which can be used to check the result later.
-
-![Action Activation ID](../assets/ow_action_with_activation_id.png)
-
-The **activation id** can be used to  check the response using `wsk` CLI like:
-
-```sh
-wsk -i activation result <activation_id>
-```
-
-e.g. 
-
-```sh
-wsk -i activation result ffb2966350904356b29663509043566e
-```
-
-Lets now invoke our Java Function in unblocked manner:
-
-``ACTIVATION_ID=$(wsk -i action invoke hello-openwhisk | awk '{print $6}')``{{execute}}
-
-Lets check the result of the invocation:
-
-``wsk -i activation result $ACTIVATION_ID``{{execute}}
-
-You should now see a result like:
-
-```json
-{
-    "greetings": "Hello! Welcome to OpenWhisk on OpenShift"
-}
-```
-
-**Blocked invocation**
-
-We can also make the OpenWhisk action invocation to be synchronous but adding a `--result` parameter to `wsk` CLI command: 
+Having updated the `hello-openwhisk` function, let's now verify the update.
 
 ``wsk -i action invoke hello-openwhisk --result``{{execute}}
 
-Executing the above command should return us a JSON payload like:
+Executing the above command should return the following JSON payload:
 
 ```json
 {
-    "greetings": "Hello! Welcome to OpenWhisk on OpenShift"
+   "greetings": "Hello! Welcome to OpenWhisk on OpenShift"
 }
 ```
 

@@ -1,8 +1,8 @@
 ## Congratulations
 
-We have now learnt:
+We have now learned how to:
 
-* How to setup Apache OpenWhisk on OpenShift ?
+* Setup Apache OpenWhisk on OpenShift
 * Write a simple JavaScript function
 * Deploy the function to Apache OpenWhisk
 * Invoke the function and see the results

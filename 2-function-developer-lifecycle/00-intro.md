@@ -1,12 +1,12 @@
 # Apache OpenWhisk on OpenShift
 
-In this scenario we will see the typical **Developer Lifecycle** in developing function on  [Apache OpenWhisk](https://openwhisk.apache.org/). 
+In this scenario we will see the typical **Developer Lifecycle** in developing function on [Apache OpenWhisk](https://openwhisk.apache.org/). 
 
 In this scenario:
 
-* We will be deploy [Apache OpenWhisk](https://openwhisk.apache.org/) deployed on [OpenShift Container Platform](https://openshift.com]) 
+* We will be deploy [Apache OpenWhisk](https://openwhisk.apache.org/) on the [OpenShift Container Platform](https://openshift.com]) 
 
-* Build Java Function, then do create, update and delete of the on to [Apache OpenWhisk](https://openwhisk.apache.org/) , as part of the scenario we will also update the function and finally see how to delete it.
+* Build a Java function then create, update, and delete the function on [Apache OpenWhisk](https://openwhisk.apache.org/).  
 
 ## Additional Resources
 

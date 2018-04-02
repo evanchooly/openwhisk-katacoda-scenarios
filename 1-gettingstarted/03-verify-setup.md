@@ -14,20 +14,21 @@ function main() {
     return {payload: 'Welcome to Apache OpenWhisk on OpenShift'};
 }
 </pre>
-Take a minute and review the `greeter.js`. At this stage it is pretty simple and has only one method that returns a JSON payload like 
+Take a minute and review the `greeter.js`. At this stage it is pretty simple and has only one method that returns a JSON payload: 
+
 ```json
 {"payload": "Welcome to Apache OpenWhisk on OpenShift"}
 ```
 
 **2. Deploy the function**
 
-Lets now create the function say **greeter** to OpenWhisk:
+Let's now deploy the function called **greeter** to OpenWhisk:
 
 ``cd /root/projects/getting-started/``{{execute}}
 
 ``wsk -i action create greeter greeter.js``{{execute}}
 
-Lets check if the function is created correctly:
+Let's check if the function is created correctly:
 
 ``wsk -i action list | grep greeter``{{execute}}
 
@@ -39,11 +40,11 @@ The output of the command should show somthing like:
 
 **3. Verify the function**
 
-Having created the function **greeter**, lets now verify the function by invoking it:
+Having created the function **greeter**, let's now verify the function by invoking it:
 
 ``wsk -i action invoke greeter --result``{{execute}}
 
-Executing the above command should return us a JSON payload like:
+Executing the above command should return us a JSON payload:
 
 ```json
 {"payload": "Welcome to Apache OpenWhisk on OpenShift"}

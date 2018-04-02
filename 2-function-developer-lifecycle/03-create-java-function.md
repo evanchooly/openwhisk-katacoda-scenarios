@@ -1,45 +1,57 @@
 # Create Java Function
 
-Having successfully deployed [Apache OpenWhisk](https://openwhisk.apache.org/) to [OpenShift](https://openshift.com), and [OpenWhisk CLI](https://github.com/apache/incubator-openwhisk-cli/releases/) now configured to work with the OpenWhisk, we will now write a simple Java function.
+Having successfully deployed [Apache OpenWhisk](https://openwhisk.apache.org/) to [OpenShift](https://openshift.com) and [OpenWhisk CLI](https://github.com/apache/incubator-openwhisk-cli/releases/) is now configured to work with the OpenWhisk, we will now write a simple Java function.
 
 
-**1. Create Java function**
+**1. Create a Java function**
 
-Java function could be created using the [Java Action Maven Archetype](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).  
+The Java function can be created using the [Java Action Maven Archetype](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).  
 
 ``cd /root/projects``{{execute}}
 
-Create a Java Function project called **hello-openwhisk**
+Create a Java function project called `hello-openwhisk`
 
-``mvn archetype:generate -DarchetypeGroupId=org.apache.openwhisk.java -DarchetypeArtifactId=java-action-archetype -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=com.example -DartifactId=hello-openwhisk``{{execute}}
+``mvn archetype:generate 
+    -DarchetypeGroupId=org.apache.openwhisk.java 
+    -DarchetypeArtifactId=java-action-archetype 
+    -DarchetypeVersion=1.0-SNAPSHOT 
+    -DgroupId=com.example 
+    -DartifactId=hello-openwhisk
+``{{execute}}
 
 Move to the project directory
+
 ``cd ~/projects/hello-openwhisk``{{execute}}
 
-Click the link below to open pom.xml and update the **finalName** with value **${artifactId}** that makes us avoid long jar names during Function deployment on OpenWhisk:
+Click the link below to open pom.xml and update the `finalName` with value `${artifactId}` that helps us avoid long jar names during function deployment on OpenWhisk:
 
-``~/projects/hello-openwhisk/pom.xml``{{open}}
+``/root/projects/hello-openwhisk/pom.xml``{{open}}
 
-Lets open the Java source file **/root/projects/hello-openwhisk/src/main/java/com/example/FunctionApp.java**  to review its contents, click the link below to pent the source file on editor:
+Let's open the Java source file `src/main/java/com/example/FunctionApp.java` to review its contents.  Click the link below to open the source file in the editor:
 
 ``/root/projects/hello-openwhisk/src/main/java/com/example/FunctionApp.java``{{open}}
 
-All OpenWhisk Java Function class should have **main** method with signature that takes `com.google.gson.JsonObject` as parameter and returns `com.google.gson.JsonObject` as response.
+All OpenWhisk Java function classes should have a `main` method with a signature that takes a `com.google.gson.JsonObject` as parameter and returns a `com.google.gson.JsonObject`.
 
-Build the project 
+Build the project
+
 ``mvn clean package``{{execute}}
 
-**NOTE**: The Java Action Maven Archetype is not yet there in maven central, hence if you plan to use them in your local OpenWhisk environment you then need to build and install from sources.
+`NOTE`: The Java action maven archetype is not in maven central yet.  If you plan to use it in your local OpenWhisk environment you then need to build and install from sources.
+
+```TODO
+link to the instructions for this
+```
 
 **2. Deploy the function**
 
-Lets now create the function say **hello-openwhisk** to OpenWhisk:
+Let's now create a function called `hello-openwhisk` in OpenWhisk:
 
 ``wsk -i action create hello-openwhisk target/hello-openwhisk.jar --main com.example.FunctionApp``{{execute}}
 
-When we create Java function the parameter **--main** is mandatory,  it defines which main Java class that needs to be called during OpenWhisk Action invocation.
+When we create Java function the parameter `--main` is mandatory.  It defines which Java class will be called during OpenWhisk Action invocation.
 
-Lets check if the function is created correctly:
+Let's check if the function is created correctly:
 
 ``wsk -i action list | grep 'hello-openwhisk'``{{execute}}
 
@@ -51,15 +63,15 @@ The output of the command should show something like:
 
 **3. Verify the function**
 
-Having created the function **hello-openwhisk**, lets now verify the function.
+Having created the function `hello-openwhisk`, let's now verify the function.
 
 **Unblocked invocation**
 
-All OpenWhisk action invocations are `unblocked` by default.  Each action invocation will return an **activation id** which can be used to check the result later.
+All OpenWhisk action invocations are `unblocked` by default.  Each action invocation will return an activation ID which can be used to check the result later.
 
 ![Web Console Login](../assets/ow_action_with_activation_id.png)
 
-The **activation id** can be used to  check the response using `wsk` CLI like:
+The activation ID can be used to  check the response using `wsk` CLI:
 
 ```sh
 wsk -i activation result <activation_id>
@@ -71,15 +83,15 @@ e.g.
 wsk -i activation result ffb2966350904356b29663509043566e
 ```
 
-Lets now invoke our Java Function in unblocked manner:
+Let's now invoke our Java function in unblocked manner:
 
 ``ACTIVATION_ID=$(wsk -i action invoke hello-openwhisk | awk '{print $6}')``{{execute}}
 
-Lets check the result of the invocation:
+Let's check the result of the invocation:
 
 ``wsk -i activation result $ACTIVATION_ID``{{execute}}
 
-You should see a result like:
+You should see this result:
 
 ```json
 {
@@ -89,11 +101,11 @@ You should see a result like:
 
 **Blocked invocation**
 
-We can also make the OpenWhisk action invocation to be synchronous but adding a `--result` parameter to `wsk` CLI command: 
+We can also make the OpenWhisk action invocation to be synchronous by adding a `--result` parameter to `wsk` CLI command: 
 
 ``wsk -i action invoke hello-openwhisk --result``{{execute}}
 
-Executing the above command should return us a JSON payload like:
+Executing the above command should return us this JSON payload:
 
 ```json
 {
