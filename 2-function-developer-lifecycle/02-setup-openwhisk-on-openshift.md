@@ -24,18 +24,18 @@ You can also see the status via OpenShift Console:
 
 ![OpenShift Console Tab](../assets/openshift-console-tab.png) 
 
-by navigating to **FaaS- Apache OpenWhisk** project.  Successful **controller** deployment should look like:
+by navigating to `FaaS- Apache OpenWhisk` project.  Successful `controller` deployment should look like:
 
 ![OpenWhisk Controller](../assets/ow_controller_up.png)
 
 **IMPORTANT**
 
-Please proceed to next step if and only if the **controller** is ready.
+Please proceed to next step if and only if the `controller` is ready.
 
 **3. Edit OpenWhisk Ngnix Route TLS**
 TODO: update to a better description
 
-By default the OpenWhisk nginx route is configured to do "Redirect" for edge termination.  In Katacoda all the requests are secured so we need to modify nginx route **openwhisk** insecureEdgeTerminationPolicy to "Allow"
+By default the OpenWhisk nginx route is configured to do "Redirect" for edge termination.  In Katacoda all the requests are secured so we need to modify nginx route `openwhisk` insecureEdgeTerminationPolicy to "Allow"
 
 ``oc patch route openwhisk --namespace faas -p '{"spec":{"tls": {"insecureEdgeTerminationPolicy": "Allow"}}}'``{{execute}}
 

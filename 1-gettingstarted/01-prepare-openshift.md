@@ -2,10 +2,10 @@
 
 ## OpenShift Container Platform
 
-**Red Hat OpenShift Container Platform** is based on **Kubernetes** which is probably the most used orchestrator for containers running in production. **OpenShift** is currently the only container platform based on Kubernetes that offers multitenancy. This means that developers can have their own personal, isolated projects to test and verify application before committing to a shared code repository.
+Red Hat OpenShift Container Platform is based on Kubernetes which is probably the most used orchestrator for containers running in production. OpenShift is currently the only container platform based on Kubernetes that offers multitenancy. This means that developers can have their own personal, isolated projects to test and verify application before committing to a shared code repository.
 
 ## Apache OpenWhisk (Incubating) 
-**Apache OpenWhisk (Incubating)** is a [serverless](https://openwhisk.apache.org/serverless), open source cloud platform
+Apache OpenWhisk (Incubating) is a [serverless](https://openwhisk.apache.org/serverless), open source cloud platform
 that executes functions in response to events in any scale.
 
 **2. Create project**
