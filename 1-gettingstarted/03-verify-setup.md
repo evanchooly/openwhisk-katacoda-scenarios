@@ -5,7 +5,11 @@ Having successfully deployed [Apache OpenWhisk](https://openwhisk.apache.org/) t
 
 **1. Create a simple greeter JavaScript function**
 
-First, we need to create JavaScript file, click on the link below to create an empty file called **greeter.js** in the directory **/root/projects/getting-started** : ``greeter.js``{{open}}
+First, we need to create JavaScript file.  Let's create a directory for our new project:
+
+``mkdir -p /root/projects/getting-started``{{execute}}
+
+Click on the link below to create an empty file called **greeter.js** in the directory **/root/projects/getting-started** : ``greeter.js``{{open}}
 
 Once the created file is opened in the editor, you can then copy the content below into the file (or use the `Copy to editor` button):
 
