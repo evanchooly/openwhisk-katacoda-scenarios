@@ -11,13 +11,7 @@ The Java function can be created using the [Java Action Maven Archetype](https:/
 
 Create a Java function project called `hello-openwhisk`
 
-``mvn archetype:generate 
-    -DarchetypeGroupId=org.apache.openwhisk.java 
-    -DarchetypeArtifactId=java-action-archetype 
-    -DarchetypeVersion=1.0-SNAPSHOT 
-    -DgroupId=com.example 
-    -DartifactId=hello-openwhisk
-``{{execute}}
+``mvn archetype:generate -DarchetypeGroupId=org.apache.openwhisk.java -DarchetypeArtifactId=java-action-archetype -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=com.example -DartifactId=hello-openwhisk``{{execute}}
 
 Move to the project directory
 
@@ -25,11 +19,11 @@ Move to the project directory
 
 Click the link below to open pom.xml and update the `finalName` with value `${artifactId}` that helps us avoid long jar names during function deployment on OpenWhisk:
 
-``/root/projects/hello-openwhisk/pom.xml``{{open}}
+``~/projects/hello-openwhisk/pom.xml``{{open}}
 
 Let's open the Java source file `src/main/java/com/example/FunctionApp.java` to review its contents.  Click the link below to open the source file in the editor:
 
-``/root/projects/hello-openwhisk/src/main/java/com/example/FunctionApp.java``{{open}}
+``~/projects/hello-openwhisk/src/main/java/com/example/FunctionApp.java``{{open}}
 
 All OpenWhisk Java function classes should have a `main` method with a signature that takes a `com.google.gson.JsonObject` as parameter and returns a `com.google.gson.JsonObject`.
 
