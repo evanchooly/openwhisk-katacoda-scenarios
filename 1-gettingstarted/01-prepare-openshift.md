@@ -12,7 +12,7 @@ that executes functions in response to events in any scale.
 
 Let's create a project that you will use to house the [Apache OpenWhisk](https://openwhisk.apache.org/). 
 
-``oc new-project faas --display-name="FaaS- Apache OpenWhisk"``{{execute}}
+``oc new-project faas --display-name="FaaS - Apache OpenWhisk"``{{execute}}
 
 **3. Add developer as admin to `faas` project**
 

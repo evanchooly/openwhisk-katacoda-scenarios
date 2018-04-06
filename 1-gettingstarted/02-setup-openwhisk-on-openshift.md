@@ -24,7 +24,7 @@ You can also see the status via OpenShift Console:
 
 ![OpenShift Console Tab](../assets/openshift-console-tab.png) 
 
-by navigating to `FaaS- Apache OpenWhisk` project.  Successful `controller` deployment should look like:
+by navigating to `FaaS - Apache OpenWhisk` project.  Successful `controller` deployment should look like:
 
 ![OpenWhisk Controller](../assets/ow_controller_up.png)
 
