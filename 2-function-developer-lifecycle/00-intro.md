@@ -1,10 +1,7 @@
 # Apache OpenWhisk on OpenShift
 
-In this scenario we will see how to deploy [Apache OpenWhisk](https://openwhisk.apache.org/) . 
-
-In this scenario:
-
-* We will build a Java function then create, update, and delete the function on [Apache OpenWhisk](https://openwhisk.apache.org/).
+In this scenario we will build a Java function then create, update, and delete the function on [Apache OpenWhisk](https://openwhisk.apache
+.org/).
 
 ## Additional Resources
 
