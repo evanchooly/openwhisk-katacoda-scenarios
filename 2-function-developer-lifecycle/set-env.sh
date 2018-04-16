@@ -1,5 +1,6 @@
 #!/bin/bash
 rm -rf /root/projects
+mkdir -p /root/projects
 
 PROJECTODD_LEARN_TAG=learn
 docker pull projectodd/busybox:${PROJECTODD_LEARN_TAG}
@@ -33,7 +34,7 @@ oc adm policy add-role-to-user admin developer -n faas
 oc process -f https://git.io/openwhisk-template | oc create -f -
 #oc process -f https://github.com/projectodd/openwhisk-openshift/master/learn-template.yml | oc create -f -
 
-git clone https://github.com/apache/incubator-openwhisk-devtools
+git clone https://github.com/apache/incubator-openwhisk-devtools openwhisk-devtools
 
 cd openwhisk-devtools/java-action-archetype \
     && mvn -DskipTests clean install  \
@@ -47,5 +48,3 @@ do
 done
 
 oc patch route openwhisk --namespace faas -p '{"spec":{"tls": {"insecureEdgeTerminationPolicy": "Allow"}}}'
-
-echo "Ready!"

@@ -15,15 +15,15 @@ Create a Java function project called `hello-openwhisk`
 
 Move to the project directory
 
-``cd ~/projects/hello-openwhisk``{{execute}}
+``cd /root/projects/hello-openwhisk``{{execute}}
 
 Click the link below to open pom.xml and update the `finalName` with value `${artifactId}` that helps us avoid long jar names during function deployment on OpenWhisk:
 
-``~/projects/hello-openwhisk/pom.xml``{{open}}
+``/root/projects/hello-openwhisk/pom.xml``{{open}}
 
 Let's open the Java source file `src/main/java/com/example/FunctionApp.java` to review its contents.  Click the link below to open the source file in the editor:
 
-``~/projects/hello-openwhisk/src/main/java/com/example/FunctionApp.java``{{open}}
+``/root/projects/hello-openwhisk/src/main/java/com/example/FunctionApp.java``{{open}}
 
 All OpenWhisk Java function classes should have a `main` method with a signature that takes a `com.google.gson.JsonObject` as parameter and returns a `com.google.gson.JsonObject`.
 
