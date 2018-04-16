@@ -1,6 +1,3 @@
-#!/bin/bash
-rm -rf /root/projects
-
 cd /tmp
 [ -f OpenWhisk_CLI-latest-linux-386.tgz ] || \
     wget -N -nv https://github.com/apache/incubator-openwhisk-cli/releases/download/latest/OpenWhisk_CLI-latest-linux-386.tgz
@@ -13,9 +10,9 @@ oc adm policy add-role-to-user admin developer -n faas
 oc process -f https://git.io/openwhisk-template | oc create -f -
 #oc process -f https://github.com/projectodd/openwhisk-openshift/master/learn-template.yml | oc create -f -
 
-git clone https://github.com/apache/incubator-openwhisk-devtools
+git clone https://github.com/apache/incubator-openwhisk-devtools /tmp/openwhisk-devtools
 
-cd openwhisk-devtools/java-action-archetype \
+cd /tmp/openwhisk-devtools/java-action-archetype \
     && mvn -DskipTests clean install  \
     && cd  \
     && rm -rf /tmp/openwhisk-devtools
