@@ -31,11 +31,8 @@ Build the project
 
 ``mvn clean package``{{execute}}
 
-`NOTE`: The Java action maven archetype is not in maven central yet.  If you plan to use it in your local OpenWhisk environment you then need to build and install from sources.
-
-```TODO
-link to the instructions for this
-```
+`NOTE`: The Java action maven archetype is not in maven central yet.  If you plan to use it in your local OpenWhisk environment you then 
+need to build and install from [sources](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).
 
 **2. Deploy the function**
 
